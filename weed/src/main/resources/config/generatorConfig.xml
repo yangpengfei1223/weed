@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="mappers" value="com.scd.erp.utils.IBaseDao.IBaseDao"/>
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/weed?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
+                        userId="root" password="root">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.hx.weed.pojo" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+
+        <sqlMapGenerator targetPackage="config.mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hx.weed.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="sys_request_path" domainObjectName="SysRequestPath"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table tableName="sys_request_path_permission_relation" domainObjectName="SysRequestPathPermissionRelation"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+
+    </context>
+</generatorConfiguration>
