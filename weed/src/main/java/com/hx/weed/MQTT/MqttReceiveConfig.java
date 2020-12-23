@@ -123,7 +123,7 @@ public class MqttReceiveConfig {
             System.out.println(topic);
             Object payload = message.getPayload();
             byte[] bs = (byte[]) payload;
-            //System.out.println(Arrays.toString(bs));
+            System.out.println(Arrays.toString(bs));
             this.mqttService.processingMsg(topic, bs);
 
         };
