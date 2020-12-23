@@ -97,7 +97,8 @@ public class MqttReceiveConfig {
         return new DirectChannel();
     }
 
-    //配置client,监听的topic 
+    //配置client,监听的topic
+    //测试git修改文件
     @Bean
     public MessageProducer inbound() {
 
